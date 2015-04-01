@@ -6,6 +6,8 @@ VAGRANTFILE_API_VERSION = "2"
 
 $bootstrap=<<SCRIPT
 apt-get update
+apt-get -y install python-pip
+pip install docker-py
 curl -sSL https://get.docker.com/ubuntu/ | sudo sh
 gpasswd -a vagrant docker
 service docker restart
