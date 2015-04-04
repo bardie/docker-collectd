@@ -31,6 +31,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     monitor.vm.box = "ubuntu/trusty64"
     monitor.vm.hostname = "monitor"
     monitor.vm.network :private_network, ip: "192.168.33.11"
+    monitor.vm.provider "virtualbox" do |vb|
+     vb.customize ["modifyvm", :id, "--memory", "2048"]
+    end
     monitor.vm.provision :shell, inline: $bootstrap
   end
 
