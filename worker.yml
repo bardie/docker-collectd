@@ -8,7 +8,7 @@ logspout:
    - /var/run/docker.sock:/tmp/docker.sock
   links:
    - logstash
-  command: syslog://192.168.33.11:5000
+  command: syslog://192.168.33.11:2057
 collectd:
   build: .
   volumes:
